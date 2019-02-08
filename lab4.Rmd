@@ -124,8 +124,10 @@ A second graph (below) confirms this.
 ## Premature Births and Parity(Amanda)
 ![Amanda's Plot](AmandaParity.png) 
 
+```
 ggplot(data = babies) + geom_bar(mapping = aes(x=parity, fill = as.factor(Premature)), position = "fill")
  + labs(title = "Number of Previous Births Compared to Prematurity") + scale_fill_discrete(name = "0=Normal, 1=Premature")
+ ```
 
 This graph is meant to answer the question: is there a correlation between prematurity and parity? I wanted to see if there was a relationship
 between the number of babies a woman has had in the past and the likelihood of having a premature baby. Each bar in the graph represents women
