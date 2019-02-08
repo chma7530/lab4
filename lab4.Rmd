@@ -193,7 +193,7 @@ __Amanda__:  used the bar plot geom for my plot to analyze any relationships bet
                        proportion of women who had a baby prematurely (compared to the proportion offor each number of births they've already had. 
                        I also used labs() and scale_fill_discrete() to change the labels on my graph.
 
-__James__: I used a violin plot. I added labels, changed the title of my legend, and changed the theme of the plot. I also used scale_fill_brewer to change the color of my plot. 
+__James__: I used a violin plot. I added labels, changed the title of my legend, and changed the theme of the plot. I also used scale_fill_brewer to change the color of my plot. For the group questions, I helped with generating the plots for the two team questions and interpreting the plots.
 __Anna__: I used a bar graph with color being another variable. I also used labs to name specific parts of my plot. I used scale_fill_discrete to also rename parts of my legend. I also used a position funciton inside of my geom_bar function.
 __Group__: The Pre Question Plots used geom_cout and geom_bar in similar ways our individual graphs were changed.
  
