@@ -52,10 +52,16 @@ geom_vline(xintercept = 270)+labs(x="Gestation Age (Days)",y="Birth Weight (Ounc
 ```
 
 This plot clearly shows that the birth weight of babies from mothers who smoke is lower than that of mothers who don't smoke 
-at every gestation age. There is one point where the the two lines intersect that occurs around the gestation age of around 300 
+at every gestation age. There is one point where the two lines intersect that occurs around the gestation age of around 300 
 days. The vertical line is the gestation age of 270 days, which determines if a baby is premature or not. 
 
 ### Recomendations
+
+As our conclusions stated that smoking mothers seems to be correlated with prematurity and lower birth weights, we reccommend that 
+women do not smoke, especially while they are pregnant, in order to have the healthiest baby possible. We also reccommend that doctors 
+share this information with their patients who are pregnant and strongly discourage them from smoking. Although there are other factors that are 
+correlated with low birth weights and premature gestational ages, the correlation with smoking is strong enough that we reccommend that
+doctors educate their patients not to smoke while pregnant and that mothers follow this protocol for the health of their babies.
 
 ## Pre-Questions Questions
 These graphs were done to see the general correlations between two variables. As smoking and most other variables are discrete, 
@@ -121,7 +127,13 @@ A second graph (below) confirms this.
 ggplot(data = babies) + geom_bar(mapping = aes(x=parity, fill = as.factor(Premature)), position = "fill")
  + labs(title = "Number of Previous Births Compared to Prematurity") + scale_fill_discrete(name = "0=Normal, 1=Premature")
 
-
+This graph is meant to answer the question: is there a correlation between prematurity and parity? I wanted to see if there was a relationship
+between the number of babies a woman has had in the past and the likelihood of having a premature baby. Each bar in the graph represents women
+who have had x amount of births in the past. The bars are then color-coded by whether or not that womean has had a premature birth. 
+Since our main question focuses on how smoking affects  a baby's health and whether or not it's premature, I wanted to make a graph to see if
+parity could possibly be a confounding variable to this question (could the number of births a mother has had in the past affect the health of her future babies?)
+The graph illustrates that as the number of previous births increases, the proportion of women that have had a baby prematurely also increases,
+suggesting that having had more babies is positively correlated with the likelihood of having a premature baby.
 
 ## (James)
 
