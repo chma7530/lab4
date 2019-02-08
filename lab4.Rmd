@@ -24,60 +24,96 @@ CHRIS YOU GET TO DO THIS!!!!!!!!!!
 ![Plot 1](graphs_q1/babies_vs_premature.png)
 
 ```
-ggplot(data=babies)+geom_bar(aes(x=factor(Premature),fill=factor(smoke)),position="dodge")+labs(x = "Premature (0 = NO, 1 = YES)",y="Amount of babies",title="Effect of Smoking on Babies")+theme_dark()
+ggplot(data=babies)+geom_bar(aes(x=factor(Premature),fill=factor(smoke)),position="dodge")+
+labs(x = "Premature (0 = NO, 1 = YES)",y="Amount of babies",title="Effect of Smoking on Babies")+theme_dark()
 ```
 
 ![Plot 2](graphs_q1/babies_vs_smoking.png)
 
 ```
-ggplot(data=babies)+geom_bar(aes(x=factor(smoke),fill=factor(Premature)),position="dodge")+labs(x = "Smoke (0 = NO, 1 = YES)",y="Amount of babies",title="Effect of Smoking on Babies")
+ggplot(data=babies)+geom_bar(aes(x=factor(smoke),fill=factor(Premature)),position="dodge")+
+labs(x = "Smoke (0 = NO, 1 = YES)",y="Amount of babies",title="Effect of Smoking on Babies")
 ```
 
-We believe that these two plots provide the best evidence for the Surgeon General's first assertion. In the first plot, one can clearly see that out of all the premature babies, the majority come from women that said they have smoked. This demonstrates that given that a baby is premature, there is larger probability of the mother being a smoker than nonsmoker. The second plot shows that the proportion of premature babies to nonpremature babies is significantly larger in the case where the mother has smoked. This plot shows that given that the mother smokes, there is a larger probability of the baby being premature compared to if the mother didn't smoke. 
+We believe that these two plots provide the best evidence for the Surgeon General's first assertion. I
+n the first plot, one can clearly see that out of all the premature babies, the majority come from women that said 
+they have smoked. This demonstrates that given that a baby is premature, there is larger probability of the 
+mother being a smoker than nonsmoker. The second plot shows that the proportion of premature babies to 
+nonpremature babies is significantly larger in the case where the mother has smoked. This plot shows that 
+given that the mother smokes, there is a larger probability of the baby being premature compared to if the 
+mother didn't smoke. 
 
 ####Plot for Conclusion 2
 ![Plot 3](graphs_q2/weight_age_smoking.png)
 
 ```
-ggplot(data=babies)+geom_smooth(aes(x=gestation,y=bwtoz,color=factor(smoke)),se=FALSE)+geom_vline(xintercept = 270)+labs(x="Gestation Age (Days)",y="Birth Weight (Ounces)",title="How Smoking Affects Birth Weight and Gestation")
+ggplot(data=babies)+geom_smooth(aes(x=gestation,y=bwtoz,color=factor(smoke)),se=FALSE)+
+geom_vline(xintercept = 270)+labs(x="Gestation Age (Days)",y="Birth Weight (Ounces)",title="How Smoking Affects Birth Weight and Gestation")
 ```
 
-This plot clearly shows that the birth weight of babies from mothers who smoke is lower than that of mothers who don't smoke at every gestation age. There is one point where the the two lines intersect that occurs around the gestation age of around 300 days. The vertical line is the gestation age of 270 days, which determines if a baby is premature or not. 
+This plot clearly shows that the birth weight of babies from mothers who smoke is lower than that of mothers who don't smoke 
+at every gestation age. There is one point where the two lines intersect that occurs around the gestation age of around 300 
+days. The vertical line is the gestation age of 270 days, which determines if a baby is premature or not. 
 
 ### Recomendations
 
+As our conclusions stated that smoking mothers seems to be correlated with prematurity and lower birth weights, we reccommend that 
+women do not smoke, especially while they are pregnant, in order to have the healthiest baby possible. We also reccommend that doctors 
+share this information with their patients who are pregnant and strongly discourage them from smoking. Although there are other factors that are 
+correlated with low birth weights and premature gestational ages, the correlation with smoking is strong enough that we reccommend that
+doctors educate their patients not to smoke while pregnant and that mothers follow this protocol for the health of their babies.
+
 ## Pre-Questions Questions
-These graphs were done to see the general correlations between two variables. As smoking and most other variables are discrete, we decided to use geom_count() to represent this data best.
+These graphs were done to see the general correlations between two variables. As smoking and most other variables are discrete, 
+we decided to use geom_count() to represent this data best.
 
 ![__Smoking and Mother's Age_](pre question/Pre Plot 2.png)
 ```
-ggplot(data=babies,aes(x=as.factor(smoke), y=mage, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Mothers Age')
+ggplot(data=babies,aes(x=as.factor(smoke), y=mage, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ 
+labs(x='Smoking', y='Mothers Age')
 ```
-This graph shows the distribution of the mother's age when pregnant and whether or not they smoke. The distribution of the two categories (smoking vs. non-smoking) are very different. There is a fairly even distribution of the non-smokers ages around 25, however, there are two large groups of data centered around ages 23 and 30 for those who do smoke. This finding is could be caused by not a large enough sample size or other factors we have not taken into account.
+This graph shows the distribution of the mother's age when pregnant and whether or not they smoke. The distribution of the two 
+categories (smoking vs. non-smoking) are very different. There is a fairly even distribution of the non-smokers ages around 25, however, 
+there are two large groups of data centered around ages 23 and 30 for those who do smoke. This finding is could be caused by not a large 
+enough sample size or other factors we have not taken into account.
 
 ![__Smoking and Mother's Education_](pre question/Pre Plot 1.png)
 ```
-ggplot(data=babies,aes(x=as.factor(smoke), y=med, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Mothers Education')
+ggplot(data=babies,aes(x=as.factor(smoke), y=med, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ 
+labs(x='Smoking', y='Mothers Education')
 ```
-This graph shows the distribution of Mother's Education (0 being the lowest) and their smoking habits. This graph shows that most of the women who choose to smoke while pregnant have an education level of 2, which represents those who have graduated from high school (as their highest level of schooling). This result is not surprising as the Center for Disease Control reports that adults with less than a high school education are more likely to smoke cigarettes than their peers who have obtained a college degree (https://www.cdc.gov/tobacco/disparities/low-ses/index.htm).
+This graph shows the distribution of Mother's Education (0 being the lowest) and their smoking habits. This graph shows that most of the 
+women who choose to smoke while pregnant have an education level of 2, which represents those who have graduated from high school 
+(as their highest level of schooling). This result is not surprising as the Center for Disease Control reports that adults with less than a high 
+school education are more likely to smoke cigarettes than their peers who have obtained a college degree 
+(https://www.cdc.gov/tobacco/disparities/low-ses/index.htm).
 
 ![__Smoking and Father's Education_](pre question/Pre Plot 3.png)
 ```
-ggplot(data=babies,aes(x=as.factor(smoke), y=ded, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Fathers Education')
+ggplot(data=babies,aes(x=as.factor(smoke), y=ded, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ 
+labs(x='Smoking', y='Fathers Education')
 ```
-This graph shows the distributions of Father's Education (0 being the lowest) and the Mother's Smoking habits. This graph, similar to the one before, also shows that fathers that have an education of 2, which represents those who have graduated from high school (as their highest level of schooling), are the most likely out of all of the education groups to have a wife that smokes. This data may or may not be correlated to the Father's Smoking habits as well, but this data set did not report the Father's smoking habits.
+This graph shows the distributions of Father's Education (0 being the lowest) and the Mother's Smoking habits. This graph, similar to the one 
+before, also shows that fathers that have an education of 2, which represents those who have graduated from high school (as their highest level 
+of schooling), are the most likely out of all of the education groups to have a wife that smokes. This data may or may not be correlated to the 
+Father's Smoking habits as well, but this data set did not report the Father's smoking habits.
 
 ![__Smoking and Number of Cigarettes Smoked Per Day_](pre question/Pre Plot 5.png)
 ```
-ggplot(data=babies,aes(x=as.factor(smoke), y=number, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Number of Cigarettes Smoked Per Day (Increments of 5)')
+ggplot(data=babies,aes(x=as.factor(smoke), y=number, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ 
+labs(x='Smoking', y='Number of Cigarettes Smoked Per Day (Increments of 5)')
 ```
-This graph shows the relationship between number of cigarettes smoked per day to general smoking habits. The differences between smokers and non-smokers should be very evident as if one does not smoke, the number of cigarettes one smokes per day should be zero.
+This graph shows the relationship between number of cigarettes smoked per day to general smoking habits. The differences between
+ smokers and non-smokers should be very evident as if one does not smoke, the number of cigarettes one smokes per day should be zero.
 
 ![__Smoking and Premature Birth_](pre question/Pre Plot 6.png)
 ```
-ggplot(data=babies,aes(x=as.factor(smoke), y=Premature, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Premature (1=Yes)')
+ggplot(data=babies,aes(x=as.factor(smoke), y=Premature, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ 
+labs(x='Smoking', y='Premature (1=Yes)')
 ```
-This graph shows the amount of babies who were born prematurely were more likely to have had a mother that smoked while pregnant. This data is also very important because this study overall had less participants who smoked while pregnant than who did not. This means that the actual percentage of babies born to mothers who smoke is higher.
+This graph shows the amount of babies who were born prematurely were more likely to have had a mother that smoked while pregnant. 
+This data is also very important because this study overall had less participants who smoked while pregnant than who did not. 
+This means that the actual percentage of babies born to mothers who smoke is higher.
 
 A second graph (below) confirms this. 
 
@@ -85,8 +121,23 @@ A second graph (below) confirms this.
 
 ## Mother's ages and premature babys (Chris)
 
-## (Amanda)
+## Premature Births and Parity(Amanda)
+![Amanda's Plot](AmandaParity.png) 
 
+```
+ggplot(data = babies) + geom_bar(mapping = aes(x=parity, fill = as.factor(Premature)), position = "fill")
+ + labs(title = "Number of Previous Births Compared to Prematurity") + scale_fill_discrete(name = "0=Normal, 1=Premature")
+ ```
+
+This graph is meant to answer the question: is there a correlation between prematurity and parity? I wanted to see if there was a relationship
+between the number of babies a woman has had in the past and the likelihood of having a premature baby. Each bar in the graph represents women
+who have had x amount of births in the past. The bars are then color-coded by whether or not that womean has had a premature birth. 
+Since our main question focuses on how smoking affects  a baby's health and whether or not it's premature, I wanted to make a graph to see if
+parity could possibly be a confounding variable to this question (could the number of births a mother has had in the past affect the health of her future babies?)
+The graph illustrates that as the number of previous births increases, the proportion of women that have had a baby prematurely also increases,
+suggesting that having had more babies is positively correlated with the likelihood of having a premature baby.
+
+## (James)
 ## Mother's Termination Age and Prematureness (James)
 ![](plots/james_plot.png)
 ```
@@ -100,12 +151,25 @@ My goal was to determine if there was any relationship between a baby being prem
 
 
 ```
-ggplot(data=babies)+ geom_bar(mapping=aes(x=as.factor(smoke), fill=as.factor(inc)),position='stack')+ guides(fill=guide_legend(title="Income"))+ scale_fill_discrete(breaks=c('0','1','2','3','4','5','6','7','8','9'),labels=c('Under 2,500','2,500-4,999','5,000-7,499','7,500-9,999','10,000-12,499','12,500-14,999','15,000-17,499','17,500-19,999','20,000-22,499','22,500+'))+ labs(x= "Smoking (0=No)", title= "Smoking and Income",y= "Count")
+ggplot(data=babies)+ geom_bar(mapping=aes(x=as.factor(smoke), fill=as.factor(inc)),position='stack')+ guides(fill=guide_legend(title="Income"))+ 
+scale_fill_discrete(breaks=c('0','1','2','3','4','5','6','7','8','9'),labels=c('Under 2,500','2,500-4,999','5,000-7,499','7,500-9,999','10,000-12,499','12,500-14,999','15,000-17,499','17,500-19,999','20,000-22,499','22,500+'))+
+ labs(x= "Smoking (0=No)", title= "Smoking and Income",y= "Count")
 ```
-The relation between Smoking and Income is very important due to the positive relationship between smoking and premature births. A child that is born premature often have a higher chance of medical complications (https://www.mayoclinic.org/diseases-conditions/premature-birth/symptoms-causes/syc-20376730). In this graph, over 50% of the mother's who smoke have incomes under $12,499. This can be helpful to general providers and those who wish to inform people on the risks of smoking while pregnant.
+The relation between Smoking and Income is very important due to the positive relationship between smoking and premature births. 
+A child that is born premature often have a higher chance of medical complications (https://www.mayoclinic.org/diseases-conditions/premature-birth/symptoms-causes/syc-20376730). 
+In this graph, over 50% of the mother's who smoke have incomes under $12,499. This can be helpful to general providers and those who wish to inform people
+ on the risks of smoking while pregnant.
 
 ## A List of Non-Defaults We Used
 __Chris__:
+__Amanda__:  used the bar plot geom for my plot to analyze any relationships between parity and the birth of premature babies. 
+                       I put parity on the x-axis so that I could see how many women had x amount of babies in their lives previously. Then, 
+                       I used the fill function along with as.factor and position so that I could manipulate the graph. Now, the graph shows the
+                       proportion of women who had a baby prematurely (compared to the proportion offor each number of births they've already had. 
+                       I also used labs() and scale_fill_discrete() to change the labels on my graph.
+__James__:
+__Anna__: I used a bar graph with color being another variable. I also used labs to name specific parts of my plot. I used scale_fill_discrete to also rename parts of my legend. 
+                 I also used a position funciton insdie of my geom_bar function.
 __Amanda__:
 __James__: I used a violin plot. I added labels, changed the title of my legend, and changed the theme of the plot. I also used scale_fill_brewer to change the color of my plot. 
 __Anna__: I used a bar graph with color being another variable. I also used labs to name specific parts of my plot. I used scale_fill_discrete to also rename parts of my legend. I also used a position funciton inside of my geom_bar function.
