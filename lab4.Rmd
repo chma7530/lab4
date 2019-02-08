@@ -9,6 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
 # Data Me Pls
+### James, Anna, Chris, Amanda
 
 ## Pre-Questions Questions
 These graphs were done to see the general correlations between two variables. As smoking and most other variables are discrete, we decided to use geom_count() to represent this data best.
@@ -17,33 +18,34 @@ These graphs were done to see the general correlations between two variables. As
 ```
 ggplot(data=babies,aes(x=as.factor(smoke), y=mage, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Mothers Age')
 ```
-This graph shows the distribution of mother's age when pregnant and whether or not they smoke. The distribution of the two categories (smoking vs. non-smoking) are very different. There is a fairly even distribution of the non-smokers ages around 25, however there are two large groups of data centered around ages 23 and 30 for those who do smoke. This finding is could be caused by not a large enough sample size or other factors we have not take into account.
+This graph shows the distribution of the mother's age when pregnant and whether or not they smoke. The distribution of the two categories (smoking vs. non-smoking) are very different. There is a fairly even distribution of the non-smokers ages around 25, however, there are two large groups of data centered around ages 23 and 30 for those who do smoke. This finding is could be caused by not a large enough sample size or other factors we have not taken into account.
 
 ![__Smoking and Mother's Education_](pre question/Pre Plot 1.png)
 ```
 ggplot(data=babies,aes(x=as.factor(smoke), y=med, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Mothers Education')
 ```
-This graph shows the distribution of Mother's Education (0 being the lowest) and their smoking habits. This graph shows that most of the women who choose to smoke while pregnant have an education level of 2, which represents those who have graduated from high school (as their higest level of schooling). This result is not suprising as Center for Disease Control reports that adults with less than a high school education are more likely to smoke cigarettes than their peers who have obtained a college degree (https://www.cdc.gov/tobacco/disparities/low-ses/index.htm).
+This graph shows the distribution of Mother's Education (0 being the lowest) and their smoking habits. This graph shows that most of the women who choose to smoke while pregnant have an education level of 2, which represents those who have graduated from high school (as their highest level of schooling). This result is not surprising as the Center for Disease Control reports that adults with less than a high school education are more likely to smoke cigarettes than their peers who have obtained a college degree (https://www.cdc.gov/tobacco/disparities/low-ses/index.htm).
 
 ![__Smoking and Father's Education_](pre question/Pre Plot 3.png)
 ```
 ggplot(data=babies,aes(x=as.factor(smoke), y=ded, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Fathers Education')
 ```
-This graph shows the distributions of Father's Education (0 beign the lowest) and the Mother's Smoking habits. This graph, similar to the one beofre, also shows that Father's that have an education of 2, which represents those who have graduated from high school (as their highest level of schooling), are the most likely out of all of the education groups to have a wife that smokes. This data may or may not be correlated to the Father's Smoking habits as well, but this data set did not report the Father's smoking habits.
+This graph shows the distributions of Father's Education (0 being the lowest) and the Mother's Smoking habits. This graph, similar to the one before, also shows that fathers that have an education of 2, which represents those who have graduated from high school (as their highest level of schooling), are the most likely out of all of the education groups to have a wife that smokes. This data may or may not be correlated to the Father's Smoking habits as well, but this data set did not report the Father's smoking habits.
 
-![__Smoking and Number of Cigaretts Smoked Per Day_](pre question/Pre Plot 5.png)
+![__Smoking and Number of Cigarettes Smoked Per Day_](pre question/Pre Plot 5.png)
 ```
-ggplot(data=babies,aes(x=as.factor(smoke), y=number, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Number of Cigaretts Smoked Per Day (Increments of 5)')
+ggplot(data=babies,aes(x=as.factor(smoke), y=number, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Number of Cigarettes Smoked Per Day (Increments of 5)')
 ```
-This grpah shows the relation between number of cigaretts smoked per day to general smoking habits. The differences between smokers and non-smokers should be very evident as if one does not smoke, the number of cigeretts one smokes per day should be zero.
+This graph shows the relationship between number of cigarettes smoked per day to general smoking habits. The differences between smokers and non-smokers should be very evident as if one does not smoke, the number of cigarettes one smokes per day should be zero.
 
 ![__Smoking and Premature Birth_](pre question/Pre Plot 6.png)
 ```
 ggplot(data=babies,aes(x=as.factor(smoke), y=Premature, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Premature (1=Yes)')
 ```
-This graph shows the amount of babies who were born premature were more likely to have had a mother that smoked while pregnant. This data is also very important because this study overall had less participants who smoked while pregnant than who did not. This means that the actual percentage of babies born to mothers who smoke is higher.
+This graph shows the amount of babies who were born prematurely were more likely to have had a mother that smoked while pregnant. This data is also very important because this study overall had less participants who smoked while pregnant than who did not. This means that the actual percentage of babies born to mothers who smoke is higher.
 
 A second graph (below) confirms this. 
+
 ![](pre question/Pre Plot 7.png)
 
 ## Group Questions
