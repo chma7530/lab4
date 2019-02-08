@@ -29,7 +29,8 @@ The United States is among the most developed countries in the world; however,
        and the health complications that infants endure, a study warning of the
         dangers of smoking is needed to empirically convey the severity of such
          actions; the conclusions from this study can be used by the medical 
-         community to provide the best care they can for families and babies. 
+         community to provide the best care they can for families and babies.
+         
 ### DATA
 ####Plots for Conclusion 1
 ![Plot 1](graphs_q1/babies_vs_premature.png)
@@ -129,7 +130,10 @@ A second graph (below) confirms this.
 
 ![](pre question/Pre Plot 7.png)
 
-## Mother's ages and premature babys (Chris)
+## Individual Questions
+
+### Mother's ages and premature babys (Chris)
+
 ![](Chris'_plot.png)
 
 ```
@@ -143,24 +147,24 @@ This study was meant to explore alternate contributions to prematurity. It was t
    This information can be usefull for providers who want to keep an eye out for various risks that contribute towards premature pregnancy. 
  
 
-## Premature Births and Parity(Amanda)
+### Premature Births and Parity(Amanda)
 ![Amanda's Plot](plots/AmandaParity.png) 
 
 ```
 ggplot(data = babies) + geom_bar(mapping = aes(x=parity, fill = as.factor(Premature)), position = "fill")
  + labs(title = "Number of Previous Births Compared to Prematurity") + scale_fill_discrete(name = "0=Normal, 1=Premature")
- ```
+```
 
 This graph is meant to answer the question: is there a correlation between prematurity and parity? I wanted to see if there was a relationship
 between the number of babies a woman has had in the past and the likelihood of having a premature baby. Each bar in the graph represents women
-who have had x amount of births in the past. The bars are then color-coded by whether or not that womean has had a premature birth. 
+who have had x amount of births in the past. The bars are then color-coded by whether or not that woman has had a premature birth. 
 Since our main question focuses on how smoking affects  a baby's health and whether or not it's premature, I wanted to make a graph to see if
 parity could possibly be a confounding variable to this question (could the number of births a mother has had in the past affect the health of her future babies?)
 The graph illustrates that as the number of previous births increases, the proportion of women that have had a baby prematurely also increases,
 suggesting that having had more babies is positively correlated with the likelihood of having a premature baby.
 
-## (James)
-## Mother's Termination Age and Prematureness (James)
+
+### Mother's Termination Age and Prematureness (James)
 ![](plots/james_plot.png)
 ```
 ggplot(data=babies)+geom_violin(aes(x=factor(Premature),y=mage,fill=factor(Premature)))+labs(x="0 = Not Premature, 1 = Premature",y="Mother's age at Termination of Pregnancy",title = "Prematureness vs. Mother's Termination Age",fill = "Prematureness")+scale_fill_brewer(palette="Reds")+theme_dark()
@@ -168,7 +172,7 @@ ggplot(data=babies)+geom_violin(aes(x=factor(Premature),y=mage,fill=factor(Prema
 My goal was to determine if there was any relationship between a baby being premature and the mother's termination age. By analyzing this plot, it's clear that there's not much of a relationship. However, for premature babies, these is an increase of density for mothers that are 35+. This doesn't answer my question fully, but it does provide some connection between the two variables.  
 
 
-## Smoking and Income (Anna)
+### Smoking and Income (Anna)
 ![](plots/Anna's plot.png)
 
 
@@ -187,13 +191,16 @@ __Chris__:  I used the box plot geom in order to analyze if mother's age impacts
 I used the fill function to change the color of the individual box plots to reflect wheather a baby was premature or not. I changed the labels
  of the axes and added a title. I also inverted my axes so it was easier to compare the data sets. Finally, I added another geom function to plot
   the points of ages over the boxplot so it was easier to tell which ages were outliers. 
-__Amanda__:  used the bar plot geom for my plot to analyze any relationships between parity and the birth of premature babies. 
+
+__Amanda__: I used the bar plot geom for my plot to analyze any relationships between parity and the birth of premature babies. 
                        I put parity on the x-axis so that I could see how many women had x amount of babies in their lives previously. Then, 
                        I used the fill function along with as.factor and position so that I could manipulate the graph. Now, the graph shows the
                        proportion of women who had a baby prematurely (compared to the proportion offor each number of births they've already had. 
                        I also used labs() and scale_fill_discrete() to change the labels on my graph.
 
 __James__: I used a violin plot. I added labels, changed the title of my legend, and changed the theme of the plot. I also used scale_fill_brewer to change the color of my plot. For the group questions, I helped with generating the plots for the two team questions and interpreting the plots.
+
 __Anna__: I used a bar graph with color being another variable. I also used labs to name specific parts of my plot. I used scale_fill_discrete to also rename parts of my legend. I also used a position funciton inside of my geom_bar function.
+
 __Group__: The Pre Question Plots used geom_cout and geom_bar in similar ways our individual graphs were changed.
  
