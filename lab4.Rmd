@@ -87,10 +87,17 @@ A second graph (below) confirms this.
 
 ## (Amanda)
 
-## (James)
+## Mother's Termination Age and Prematureness (James)
+![](plots/james_plot.png)
+```
+ggplot(data=babies)+geom_violin(aes(x=factor(Premature),y=mage,fill=factor(Premature)))+labs(x="0 = Not Premature, 1 = Premature",y="Mother's age at Termination of Pregnancy",title = "Prematureness vs. Mother's Termination Age",fill = "Prematureness")+scale_fill_brewer(palette="Reds")+theme_dark()
+```
+My goal was to determine if there was any relationship between a baby being premature and the mother's termination age. By analyzing this plot, it's clear that there's not much of a relationship. However, for premature babies, these is an increase of density for mothers that are 35+. This doesn't answer my question fully, but it does provide some connection between the two variables.  
+
 
 ## Smoking and Income (Anna)
 ![](plots/Anna's plot.png)
+
 
 ```
 ggplot(data=babies)+ geom_bar(mapping=aes(x=as.factor(smoke), fill=as.factor(inc)),position='stack')+ guides(fill=guide_legend(title="Income"))+ scale_fill_discrete(breaks=c('0','1','2','3','4','5','6','7','8','9'),labels=c('Under 2,500','2,500-4,999','5,000-7,499','7,500-9,999','10,000-12,499','12,500-14,999','15,000-17,499','17,500-19,999','20,000-22,499','22,500+'))+ labs(x= "Smoking (0=No)", title= "Smoking and Income",y= "Count")
@@ -100,7 +107,7 @@ The relation between Smoking and Income is very important due to the positive re
 ## A List of Non-Defaults We Used
 __Chris__:
 __Amanda__:
-__James__:
-__Anna__: I used a bar graph with color being another variable. I also used labs to name specific parts of my plot. I used scale_fill_discrete to also rename parts of my legend. I also used a position funciton insdie of my geom_bar function.
+__James__: I used a violin plot. I added labels, changed the title of my legend, and changed the theme of the plot. I also used scale_fill_brewer to change the color of my plot. 
+__Anna__: I used a bar graph with color being another variable. I also used labs to name specific parts of my plot. I used scale_fill_discrete to also rename parts of my legend. I also used a position funciton inside of my geom_bar function.
 __Group__: The Pre Question Plots used geom_cout and geom_bar in similar ways our individual graphs were changed.
  
