@@ -17,8 +17,19 @@ library(tidyverse)
 2. The newborns of mothers who smoke have smaller birth weights at every gestational age (number of days into pregnancy when child is born).
 
 ### Why it Matters
-CHRIS YOU GET TO DO THIS!!!!!!!!!!
-
+The United States is among the most developed countries in the world; however,
+ they report extremely high levels of misscariage and premature births compared
+  to other developed nations. This study serves as a probe into some potential 
+  explanations as to why this is. Although there are many potential causes for
+   pregnancy complications, one which has concrete foundations for studying 
+   is the effects of smoking. Establishing a correlation between druge use
+    (smoking in this study) and premature birth rates serves as insight into what
+     steps the general public can look into as a way of reducing the heightened
+      complications of pregnancy. In order to limit the grief families experience,
+       and the health complications that infants endure, a study warning of the
+        dangers of smoking is needed to empirically convey the severity of such
+         actions; the conclusions from this study can be used by the medical 
+         community to provide the best care they can for families and babies. 
 ### DATA
 ####Plots for Conclusion 1
 ![Plot 1](graphs_q1/babies_vs_premature.png)
@@ -119,6 +130,18 @@ A second graph (below) confirms this.
 ![](pre question/Pre Plot 7.png)
 
 ## Mother's ages and premature babys (Chris)
+![](Chris'_plot.png)
+
+```
+ggplot(data = babies, aes(x = Premature , y =mage, group = Premature, fill = Premature)) + geom_boxplot() + coord_flip() + labs(title = "Mothers age versus prematurity" , x = "Preamaure? 0 = no 1 = yes", y = "mothers age") + geom_point(aes(color = factor(mage)))
+```
+This study was meant to explore alternate contributions to prematurity. It was to show if the mother's age (on the extremes of fertility) imoacts the chances of a
+ baby being premature or not. The plot shows that, among those women who do have premature babies, there is a much larger portion that are in the later stages 
+ of their fertility (35+) that experience premature births. This can be seen through the skew of the boxplot leaning towards a larger quantile(in terms of area) for those 
+ women who are in advanced stages of fertility. The data also supports that women at the beginning of their fertility stages experience more premature births than those
+  who are in the normal birthing ages (20-30). This graph serves as a statistical foundation to underscore that there are many factors that can be deleterious in pregnancy.
+   This information can be usefull for providers who want to keep an eye out for various risks that contribute towards premature pregnancy. 
+ 
 
 ## Premature Births and Parity(Amanda)
 ![Amanda's Plot](plots/AmandaParity.png) 
@@ -160,7 +183,10 @@ In this graph, over 50% of the mother's who smoke have incomes under $12,499. Th
  on the risks of smoking while pregnant.
 
 ## A List of Non-Defaults We Used
-__Chris__:
+__Chris__:  I used the box plot geom in order to analyze if mother's age impacts the occurance of prematurity. 
+I used the fill function to change the color of the individual box plots to reflect wheather a baby was premature or not. I changed the labels
+ of the axes and added a title. I also inverted my axes so it was easier to compare the data sets. Finally, I added another geom function to plot
+  the points of ages over the boxplot so it was easier to tell which ages were outliers. 
 __Amanda__:  used the bar plot geom for my plot to analyze any relationships between parity and the birth of premature babies. 
                        I put parity on the x-axis so that I could see how many women had x amount of babies in their lives previously. Then, 
                        I used the fill function along with as.factor and position so that I could manipulate the graph. Now, the graph shows the
