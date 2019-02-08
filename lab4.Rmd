@@ -59,9 +59,16 @@ CHRIS YOU GET TO DO THIS!!!!!!!!!!
 ### DATA
 Plots for Conclusion 1
 ![Plot 1](graphs_q1/babies_vs_premature.png)
+
+```
 ggplot(data=babies)+geom_bar(aes(x=factor(Premature),fill=factor(smoke)),position="dodge")+labs(x = "Premature (0 = NO, 1 = YES)",y="Amount of babies",title="Effect of Smoking on Babies")+theme_dark()
+```
+
 ![Plot 2](graphs_q1/babies_vs_smoking.png)
+
+```
 ggplot(data=babies)+geom_bar(aes(x=factor(smoke),fill=factor(Premature)),position="dodge")+labs(x = "Smoke (0 = NO, 1 = YES)",y="Amount of babies",title="Effect of Smoking on Babies")
+```
 
 We believe that these two plots provide the best evidence for the Surgeon General's first assertion. In the first plot, one can clearly see that out of all the premature babies, the majority come from women that said they have smoked. This demonstrates that given that a baby is premature, there is larger probability of the mother being a smoker than nonsmoker. The second plot shows that the proportion of premature babies to nonpremature babies is significantly larger in the case where the mother has smoked. This plot shows that given that the mother smokes, there is a larger probability of the baby being premature compared to if the mother didn't smoke. 
 
