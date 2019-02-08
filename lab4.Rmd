@@ -86,6 +86,15 @@ A second graph (below) confirms this.
 ## Mother's ages and premature babys (Chris)
 
 ## (Amanda)
+![Amanda's Plot](AmandaParity.png) 
+
+ggplot(data = babies) + geom_bar(mapping = aes(x=parity, fill = as.factor(Premature)), position = "fill")
+ + labs(title = "Number of Previous Births Compared to Prematurity") + scale_fill_discrete(name = "0=Normal, 1=Premature")
+
+I used the bar plot geom for my plot to analyze any relationships between parity and the birth of premature babies. 
+I put parity on the x-axis so that I could see how many women had x amount of babies in their lives previously. Then, 
+I used the fill function along with as.factor and position so that I could manipulate the graph. Now, the graph shows the
+proportion of women who had a baby prematurely (compared to the proportion offor each number of births they've already had. 
 
 ## (James)
 
