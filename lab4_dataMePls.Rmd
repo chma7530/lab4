@@ -31,7 +31,7 @@ The United States is among the most developed countries in the world; however,
          actions; the conclusions from this study can be used by the medical 
          community to provide the best care they can for families and babies.
          
-### DATA
+### Conclusions
 ####Plots for Conclusion 1
 ![Plot 1](graphs_q1/babies_vs_premature.png)
 
@@ -66,7 +66,7 @@ This plot clearly shows that the birth weight of babies from mothers who smoke i
 at every gestation age. There is one point where the two lines intersect that occurs around the gestation age of around 300 
 days. The vertical line is the gestation age of 270 days, which determines if a baby is premature or not. 
 
-### Recomendations
+### Recommendations
 
 As our conclusions stated that smoking mothers seems to be correlated with prematurity and lower birth weights, we reccommend that 
 women do not smoke, especially while they are pregnant, in order to have the healthiest baby possible. We also reccommend that doctors 
@@ -74,7 +74,7 @@ share this information with their patients who are pregnant and strongly discour
 correlated with low birth weights and premature gestational ages, the correlation with smoking is strong enough that we reccommend that
 doctors educate their patients not to smoke while pregnant and that mothers follow this protocol for the health of their babies.
 
-## Pre-Questions Questions
+## Preliminary Question
 These graphs were done to see the general correlations between two variables. As smoking and most other variables are discrete, 
 we decided to use geom_count() to represent this data best.
 
