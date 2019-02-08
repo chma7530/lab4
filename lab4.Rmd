@@ -57,7 +57,7 @@ A second graph (below) confirms this.
 CHRIS YOU GET TO DO THIS!!!!!!!!!!
 
 ### DATA
-##Plots for Conclusion 1
+####Plots for Conclusion 1
 ![Plot 1](graphs_q1/babies_vs_premature.png)
 
 ```
@@ -72,9 +72,12 @@ ggplot(data=babies)+geom_bar(aes(x=factor(smoke),fill=factor(Premature)),positio
 
 We believe that these two plots provide the best evidence for the Surgeon General's first assertion. In the first plot, one can clearly see that out of all the premature babies, the majority come from women that said they have smoked. This demonstrates that given that a baby is premature, there is larger probability of the mother being a smoker than nonsmoker. The second plot shows that the proportion of premature babies to nonpremature babies is significantly larger in the case where the mother has smoked. This plot shows that given that the mother smokes, there is a larger probability of the baby being premature compared to if the mother didn't smoke. 
 
-##Plot for Conclusion 2
+####Plot for Conclusion 2
 ![Plot 3](graphs_q2/weight_age_smoking.png)
+
+```
 ggplot(data=babies)+geom_smooth(aes(x=gestation,y=bwtoz,color=factor(smoke)),se=FALSE)+geom_vline(xintercept = 270)+labs(x="Gestation Age (Days)",y="Birth Weight (Ounces)",title="How Smoking Affects Birth Weight and Gestation")
+```
 
 This plot clearly shows that the birth weight of babies from mothers who smoke is lower than that of mothers who don't smoke at every gestation age. There is one point where the the two lines intersect that occurs around the gestation age of around 300 days. The vertical line is the gestation age of 270 days, which determines if a baby is premature or not. 
 
