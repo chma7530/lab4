@@ -6,8 +6,22 @@ authors: James, Anna, Chris, Amanda
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
 # Data Me Pls
+
+## Pre-Questions Questions
+ggplot(data=babies,aes(x=as.factor(smoke), y=mage, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Mothers Age')
+
+ggplot(data=babies,aes(x=as.factor(smoke), y=med, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Mothers Education')
+
+ggplot(data=babies,aes(x=as.factor(smoke), y=ded, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Fathers Education')
+
+ggplot(data=babies,aes(x=as.factor(smoke), y=dht, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Fathers Height')
+
+ggplot(data=babies,aes(x=as.factor(smoke), y=number, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Number of Cigaretts Smoked Per Day (Increments of 5)')
+
+ggplot(data=babies,aes(x=as.factor(smoke), y=Premature, color=..n..))+ geom_count()+ guides(fill=guide_legend(title="Count"))+ labs(x='Smoking', y='Premature (1=Yes)')
 
 ## Group Questions
 1. Mothers who smoke have increased rates of premature delivery (before 270 days).
@@ -17,6 +31,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ### Why it matters
 
 ### DATA
+Plot 1
+
+Plot 2
 
 ### Recomendations
 
@@ -26,6 +43,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## (James)
 
-## Smoking and Income and Race (Anna)
+## Smoking and Income (Anna)
+ggplot(data=babies)+ geom_bar(mapping=aes(x=as.factor(smoke), fill=as.factor(inc)),position='stack')+ guides(fill=guide_legend(title="NULL"))+ scale_fill_discrete(breaks=c('0','1','2','3','4','5','6','7','8','9'),labels=c('Under 2,500','2,500-4,999','5,000-7,499','7,500-9,999','10,000-12,499','12,500-14,999','15,000-17,499','17,500-19,999','20,000-22,499','22,500+'))+ labs(x= "Smoking (0=No)", title= "Smoking and Income",y= "Count")
 
  
